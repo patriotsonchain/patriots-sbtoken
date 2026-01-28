@@ -140,21 +140,23 @@ h2 { color: var(--primary); font-weight: 800; font-size: 1.5rem; margin-bottom: 
 .comm-btn:hover { border-color: var(--primary); color: var(--primary); }
 
 .disclaimer { margin-top: 50px; color: #444; font-size: 0.8rem; }
-/* --- MOBIL NÉZET JAVÍTÁS (Csak telefonon lép életbe) --- */
+/* --- MOBIL NÉZET JAVÍTÁS ($PATRIOTS verzió) --- */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 3.5rem; /* Kisebb betűméret telefonon, hogy ne legyen óriási */
-        margin-top: -80px; /* Feljebb húzza a szöveget */
-        margin-left: -40px; /* Balrább húzza a szöveget */
-        margin-bottom: 20px; /* Helyet hagy maga alatt */
+        font-size: 2.8rem; /* Kisebbre vettük, hogy kiférjen a PATRIOTS */
+        margin-top: -80px;
+        margin-left: -10px; /* Kisebb eltolás balra, mert szélesebb a szöveg */
+        margin-bottom: 20px;
+        word-break: keep-all; /* Megakadályozza, hogy félbevágja a szót */
     }
 
     .hero-content {
-        padding-bottom: 50px; /* Eltartja a Tokenomics résztől, hogy ne lógjon bele */
+        padding-bottom: 50px;
     }
     
     .hero p {
-        font-size: 1rem; /* A leírás is legyen kicsit kisebb */
+        font-size: 1rem;
         padding: 0 10px;
     }
 }
+
