@@ -1,9 +1,8 @@
 /* --- ALAPOK (Majdnem fekete, egy leheletnyi mélykék beütéssel) --- */
 body {
     margin: 0;
-    /* A régi koromfekete ez volt: #000000 */
-    /* AZ ÚJ SZÍN (Éjfekete): */
-    background-color: #091c43; 
+
+    background-color: #0e3480; 
     color: white;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
