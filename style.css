@@ -144,57 +144,77 @@ h2 { color: var(--primary); font-weight: 800; font-size: 1.5rem; margin-bottom: 
 .disclaimer { margin-top: 50px; color: #444; font-size: 0.8rem; }
 /* --- MOBIL NÉZET JAVÍTÁS ($PATRIOTS verzió) --- */
 /* --- MOBIL NÉZET JAVÍTÁS (VÉGLEGES) --- */
+/* --- MOBIL NÉZET JAVÍTÁS (VÉGLEGES, SZÉTHÚZOTT VERZIÓ) --- */
 @media (max-width: 768px) {
     
-    /* 1. A Fenti menü javítása: Egymás alá kerüljenek, ne csússzanak össze */
+    /* 1. MENÜRENDSZER: Egymás alá kerüljön a logó és a linkek */
     nav {
-        flex-direction: column;
-        gap: 15px;
-        padding-bottom: 0;
+        flex-direction: column; /* Függőleges elrendezés */
+        padding: 10px 20px;
+        position: relative; /* Nem lóg bele a tartalomba */
     }
     
+    .logo {
+        margin-bottom: 15px; /* Hely a logó és a linkek között */
+        font-size: 1.5rem;
+    }
+
     .nav-links {
-        gap: 15px;
-        font-size: 0.8rem;
+        display: flex;
+        flex-wrap: wrap; /* Ha nem fér ki, törje a sort */
+        justify-content: center;
+        gap: 15px; /* Távolság a menüpontok között */
+        width: 100%;
     }
 
-    /* 2. A Nagy Logó és Cím szétválasztása */
+    /* 2. FŐ RÉSZ (HERO): Nincs többé egymásra csúszás! */
     .hero {
-        padding-top: 20px; /* Helyet hagyunk fentről */
-        min-height: auto; /* Nem kell teljes képernyő, hadd görgessen */
+        padding-top: 20px;
+        height: auto; /* Hagyjuk, hogy akkora legyen, amekkora kell */
+        min-height: auto;
+        display: block; /* Sima blokk megjelenítés */
     }
 
+    .hero-content {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Középre igazítás */
+    }
+
+    /* A KÉP (Logó) */
     .main-logo {
-        width: 120px; /* Kisebb logó, hogy ne takarjon ki mindent */
-        margin-bottom: 10px;
+        width: 140px; /* Kicsit kisebb, hogy ne uralja a képernyőt */
+        height: auto;
+        margin-bottom: 20px; /* NAGY HELY a kép alatt */
+        position: static; /* Nem engedjük, hogy elcsússzon */
     }
 
+    /* A CÍM ($PATRIOTS) */
     .hero h1 {
-        font-size: 2.5rem; /* Olvasható méret */
-        margin-top: 10px;  /* POZITÍV margó, hogy távolodjon a képtől */
-        margin-left: 0;    /* Középre igazítva */
-        margin-bottom: 20px;
-        line-height: 1.1;
-        position: relative;
-        z-index: 10; /* Hogy biztosan a logó fölött/mellett látszódjon, ne alatta */
+        font-size: 2.8rem;
+        margin: 0 0 20px 0; /* Tiszta margók: 20px hely alatta */
+        position: static;
+        line-height: 1.2;
+        word-break: break-word; /* Ha túl hosszú, törje el */
     }
 
+    /* A SZÖVEG */
     .hero p {
         font-size: 1rem;
-        padding: 0 15px;
-        margin-top: 10px;
+        padding: 0 20px;
+        margin-bottom: 30px;
     }
 
-    /* 3. Gombok igazítása */
+    /* GOMBOK */
     .hero-buttons {
-        flex-direction: column; /* Egymás alá a gombok telefonon */
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
         align-items: center;
-        gap: 10px;
     }
     
     .btn-filled, .btn-outline {
-        width: 80%; /* Szélesebb gombok mobilon */
-        box-sizing: border-box;
+        width: 80%; /* Széles gombok */
     }
 }
-
