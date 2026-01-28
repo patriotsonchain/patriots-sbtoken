@@ -1,7 +1,9 @@
-/* --- ALAPOK (Fekete háttér, Hawks stílus) --- */
+/* --- ALAPOK (Majdnem fekete, egy leheletnyi mélykék beütéssel) --- */
 body {
     margin: 0;
-    background-color: #000000; /* Teljesen fekete, mint a képen */
+    /* A régi koromfekete ez volt: #000000 */
+    /* AZ ÚJ SZÍN (Éjfekete): */
+    background-color: #05070a; 
     color: white;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
