@@ -141,22 +141,58 @@ h2 { color: var(--primary); font-weight: 800; font-size: 1.5rem; margin-bottom: 
 
 .disclaimer { margin-top: 50px; color: #444; font-size: 0.8rem; }
 /* --- MOBIL NÉZET JAVÍTÁS ($PATRIOTS verzió) --- */
+/* --- MOBIL NÉZET JAVÍTÁS (VÉGLEGES) --- */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.8rem; /* Kisebbre vettük, hogy kiférjen a PATRIOTS */
-        margin-top: -80px;
-        margin-left: -10px; /* Kisebb eltolás balra, mert szélesebb a szöveg */
-        margin-bottom: 20px;
-        word-break: keep-all; /* Megakadályozza, hogy félbevágja a szót */
-    }
-
-    .hero-content {
-        padding-bottom: 50px;
+    
+    /* 1. A Fenti menü javítása: Egymás alá kerüljenek, ne csússzanak össze */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 0;
     }
     
+    .nav-links {
+        gap: 15px;
+        font-size: 0.8rem;
+    }
+
+    /* 2. A Nagy Logó és Cím szétválasztása */
+    .hero {
+        padding-top: 20px; /* Helyet hagyunk fentről */
+        min-height: auto; /* Nem kell teljes képernyő, hadd görgessen */
+    }
+
+    .main-logo {
+        width: 120px; /* Kisebb logó, hogy ne takarjon ki mindent */
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Olvasható méret */
+        margin-top: 10px;  /* POZITÍV margó, hogy távolodjon a képtől */
+        margin-left: 0;    /* Középre igazítva */
+        margin-bottom: 20px;
+        line-height: 1.1;
+        position: relative;
+        z-index: 10; /* Hogy biztosan a logó fölött/mellett látszódjon, ne alatta */
+    }
+
     .hero p {
         font-size: 1rem;
-        padding: 0 10px;
+        padding: 0 15px;
+        margin-top: 10px;
+    }
+
+    /* 3. Gombok igazítása */
+    .hero-buttons {
+        flex-direction: column; /* Egymás alá a gombok telefonon */
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .btn-filled, .btn-outline {
+        width: 80%; /* Szélesebb gombok mobilon */
+        box-sizing: border-box;
     }
 }
 
