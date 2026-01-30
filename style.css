@@ -52,6 +52,84 @@ h1 {
 .btn-outline { border: 1px solid rgba(255,255,255,0.3); padding: 15px 30px; border-radius: 50px; font-weight: 700; background: transparent; }
 .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
+/* --- VISSZASZÁMLÁLÓ STÍLUS --- */
+#countdown-container { 
+    display: flex; 
+    flex-direction: column; /* Egymás alá rendezi a feliratot és a számot */
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; 
+    text-align: center; 
+}
+
+/* EZ AZ ÚJ FELIRAT STÍLUSA */
+.launch-label {
+    font-size: 0.8rem;
+    color: #ccc; /* Világosszürke */
+    font-weight: 700;
+    margin-bottom: 5px; /* Kis hely a számok előtt */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#countdown { font-size: 1.4rem; font-weight: 900; color: white; text-shadow: 0 0 10px #ff0033; font-family: 'Montserrat', sans-serif; }
+#countdown span { color: #ff0033; }
+#launch-message { font-size: 1.5rem; font-weight: 900; color: #ff0033; animation: pulse 1.5s infinite; }
+
+/* --- EGYÉB --- */
+.section { padding: 80px 20px; }
+h2 { color: var(--primary); font-weight: 800; font-size: 1.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+
+.cards { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.card { background-color: var(--dark-card); border: 1px solid #222; border-radius: 15px; width: 200px; padding: 30px 20px; }
+.card h3 { font-size: 2.5rem; font-weight: 900; margin: 0; color: var(--primary); }
+.card p { margin: 5px 0 0 0; color: #888; text-transform: uppercase; font-size: 0.9rem; }
+
+.gallery { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.gallery-item { width: 300px; height: 180px; background: #111; border-radius: 15px; overflow: hidden; border: 1px solid #333; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+
+.community-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+.comm-btn { background: var(--dark-card); border: 1px solid #333; padding: 20px; width: 200px; border-radius: 15px; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+.comm-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+/* --- MOBIL NÉZET --- */
+@media (max-width: 768px) {
+    nav { flex-direction: column; gap: 15px; padding: 10px 20px; }
+    .nav-links { justify-content: center; gap: 15px; width: 100%; font-size: 0.8rem; }
+    .hero { padding-top: 20px; }
+    .main-logo { width: 120px; margin-bottom: 10px; }
+    .hero h1 { font-size: 2.8rem; margin: 10px 0 20px 0; word-break: break-word; }
+    .hero p { font-size: 1rem; padding: 0 15px; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    #countdown-container { margin: 15px 0; order: -1; }
+    #countdown { font-size: 2rem; }
+    .btn-filled, .btn-outline { width: 80%; }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+    font-size: 5rem; font-weight: 900; margin: 10px 0;
+    color: var(--primary); letter-spacing: -2px; line-height: 1;
+}
+
+.hero p { color: #aaa; max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem; line-height: 1.5; }
+
+/* --- GOMBOK ÉS SZÁMLÁLÓ --- */
+.hero-buttons {
+    display: flex; justify-content: center; align-items: center;
+    gap: 15px; flex-wrap: wrap;
+}
+
+.btn-filled { background-color: var(--primary); color: black; padding: 15px 30px; border-radius: 50px; font-weight: 800; }
+.btn-filled:hover { background-color: white; }
+
+.btn-outline { border: 1px solid rgba(255,255,255,0.3); padding: 15px 30px; border-radius: 50px; font-weight: 700; background: transparent; }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
 #countdown-container { display: inline-block; margin: 0 10px; text-align: center; }
 #countdown { font-size: 1.4rem; font-weight: 900; color: white; text-shadow: 0 0 10px #ff0033; font-family: 'Montserrat', sans-serif; }
 #countdown span { color: #ff0033; }
