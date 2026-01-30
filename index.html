@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patriots Super Bowl Token</title>
     <link rel="icon" href="favicon.jpg" type="image/jpeg">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -31,10 +31,13 @@
                 <a href="#" class="btn-filled">BUY ON DEX</a>
 
                 <div id="countdown-container">
+                    <div class="launch-label">LAUNCH SOON</div>
+                    
                     <div id="countdown">
                         <span id="days">00</span>d <span id="hours">00</span>h <span id="minutes">00</span>m <span id="seconds">00</span>s
                     </div>
-                    <div id="launch-message" style="display: none;">LAUNCH SOON</div>
+                    
+                    <div id="launch-message" style="display: none;">🚀 LIVE NOW 🚀</div>
                 </div>
 
                 <a href="https://t.me/OnchainPatriots" class="btn-outline">JOIN TELEGRAM</a>
@@ -89,7 +92,6 @@
     </section>
 
     <script>
-        // BEÁLLÍTVA: 2026. Február 1. (Vasárnap) 18:00
         var countDownDate = new Date("Feb 1, 2026 18:00:00").getTime();
 
         var x = setInterval(function() {
@@ -114,6 +116,7 @@
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("countdown").style.display = "none";
+                document.querySelector(".launch-label").style.display = "none"; // Eltünteti a Launch Soont is
                 document.getElementById("launch-message").style.display = "block";
             }
         }, 1000);
