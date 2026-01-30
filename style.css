@@ -217,3 +217,52 @@ h2 { color: var(--primary); font-weight: 800; font-size: 1.5rem; margin-bottom: 
         width: 80%; /* Széles gombok */
     }
 }
+/* --- VISSZASZÁMLÁLÓ (Gombok közé igazítva) --- */
+#countdown-container {
+    display: inline-block; /* Hogy egy sorban maradjon a gombokkal */
+    vertical-align: middle; /* Középre igazítja a gombokhoz képest */
+    margin: 0 15px; /* Kicsi távolság balra és jobbra a gomboktól */
+    text-align: center;
+}
+
+#countdown {
+    font-size: 1.4rem; /* Kisebb méret, hogy beférjen a gombok közé */
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 10px #ff0033; /* Neon piros ragyogás */
+    line-height: 1.1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#countdown span {
+    color: #ff0033; /* A számok pirosak */
+}
+
+/* Ha lejárt az idő, ez a szöveg jelenik meg */
+#launch-message {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #ff0033;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite; /* Villogás */
+}
+
+/* Villogó animáció */
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* --- MOBIL NÉZET KORREKCIÓ --- */
+/* Telefonon a gombok általában egymás alá kerülnek, így a számláló is */
+@media (max-width: 768px) {
+    #countdown-container {
+        display: block; /* Mobilon legyen saját sora */
+        margin: 15px auto; /* Távolság fent/lent */
+    }
+    
+    #countdown {
+        font-size: 2rem; /* Mobilon lehet kicsit nagyobb */
+    }
+}
