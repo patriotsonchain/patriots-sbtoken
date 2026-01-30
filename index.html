@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patriots Super Bowl Token</title>
-    <link rel="icon" href="favicon.jpg" type="image/png/jpg">
+    <link rel="icon" href="favicon.jpg" type="image/jpeg">
     <link rel="stylesheet" href="style.css?v=2">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -29,11 +29,103 @@
             
             <div class="hero-buttons">
                 <a href="#" class="btn-filled">BUY ON DEX</a>
-                           <div id="countdown-container">
-                <div id="countdown">
-                    <span id="days">00</span>n <span id="hours">00</span>ó <span id="minutes">00</span>p <span id="seconds">00</span>mp
+
+                <div id="countdown-container">
+                    <div id="countdown">
+                        <span id="days">00</span>d <span id="hours">00</span>h <span id="minutes">00</span>m <span id="seconds">00</span>s
+                    </div>
+                    <div id="launch-message" style="display: none;">LAUNCH SOON</div>
                 </div>
-                <div id="launch-message" style="display: none;">🚀 LAUNCH SOON 🚀</div>
+
+                <a href="#" class="btn-outline">VIEW CONTRACT</a>
+
+                <a href="https://t.me/OnchainPatriots" class="btn-outline">JOIN TELEGRAM</a>
+            </div>
+        </div> </header>
+
+    <section id="tokenomics" class="section">
+        <h2>TOKENOMICS</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>1B</h3>
+                <p>Total Supply</p>
+            </div>
+            <div class="card">
+                <h3>0%</h3>
+                <p>Tax</p>
+            </div>
+            <div class="card">
+                <h3>FAIR</h3>
+                <p>Launch</p>
+            </div>
+            <div class="card">
+                <h3>LOCKED</h3>
+                <p>Liquidity</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="energy" class="section">
+        <h2>PATRIOTS ENERGY</h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="img1.jpg" alt="Stadium"></div>
+            <div class="gallery-item"><img src="img2.jpg" alt="Field"></div>
+            <div class="gallery-item"><img src="img3.jpg" alt="Fans"></div>
+        </div>
+    </section>
+
+    <section id="community" class="section">
+        <h2>COMMUNITY</h2>
+        <div class="community-buttons">
+            <a href="https://x.com/onchainpatriots" class="comm-btn">X / @patriots_onchain</a>
+            <a href="https://t.me/OnchainPatriots" class="comm-btn">Telegram</a>
+            <a href="#" class="comm-btn">DEX</a>
+        </div>
+        
+        <p class="disclaimer" style="margin-top: 50px; font-size: 0.9rem;">
+            <span style="color: #ff0033; font-weight: bold;">⚠️ We never DM first. Beware of scams. Entertainment only.</span>
+            <br>
+            <span style="color: #666;">Not financial advice.</span>
+        </p>
+    </section>
+
+    <script>
+        // CÉLDÁTUM: 2026. Február 8. (Super Bowl) 18:30
+        var countDownDate = new Date("Feb 8, 2026 18:30:00").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            // Számolás
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Ha 10-nél kisebb, teszünk elé 0-t
+            days = days < 10 ? "0" + days : days;
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            // Kiírás
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // Ha lejárt
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("launch-message").style.display = "block";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
             </div>
 
                 <a href="https://t.me/OnchainPatriots" class="btn-outline">JOIN TELEGRAM</a>
