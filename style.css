@@ -1,39 +1,228 @@
-/* --- ALAPOK (Majdnem fekete, egy leheletnyi mélykék beütéssel) --- */
+/* --- ALAPOK (Sötét, kékes-fekete háttér) --- */
 body {
     margin: 0;
-
-    background-color: #051026; 
+    /* Ez az "alig észrevehetően kék" fekete árnyalat */
+    background-color: #05080c !important; 
     color: white;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
 
-/* Színek: Neon Piros a zöld helyett */
+/* Színek */
 :root {
     --primary: #ff0033; /* Neon Patriots Red */
-    --dark-card: #0a0a0a; /* Majdnem fekete kártyák */
+    --dark-card: #0a0a0a;
 }
 
 a { text-decoration: none; color: white; transition: 0.3s; }
 ul { list-style: none; padding: 0; }
 
-/* --- NAVBAR --- */
+/* --- NAVBAR (MENÜ) --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
 }
-.logo { font-weight: 900; font-size: 1.2rem; color: var(--primary); }
+.logo { font-weight: 900; font-size: 1.5rem; color: var(--primary); letter-spacing: 1px; }
 .nav-links { display: flex; gap: 20px; }
-.nav-links a { font-size: 0.9rem; color: #888; }
+.nav-links a { font-size: 0.9rem; color: #888; font-weight: bold; text-transform: uppercase; }
 .nav-links a:hover { color: white; }
 
-/* --- HERO --- */
-.hero { padding: 50px 20px; }
-.main-logo { width: 150px; margin-bottom: 20px; }
+/* --- HERO SECTION --- */
+.hero {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: block;
+}
 
-/* A "Glow" effekt a logóra */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Glow effekt a logóra */
+.glow { filter: drop-shadow(0 0 15px rgba(255, 0, 51, 0.5)); }
+
+h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 10px 0;
+    color: var(--primary);
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.hero p {
+    color: #aaa;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* --- GOMBOK ÉS VISSZASZÁMLÁLÓ --- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Középre igazítja a gombokat és a számlálót */
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-filled {
+    background-color: var(--primary);
+    color: black;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 800;
+}
+.btn-filled:hover { background-color: white; }
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    background: transparent;
+}
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+/* --- VISSZASZÁMLÁLÓ STÍLUS --- */
+#countdown-container {
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+}
+
+#countdown {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 10px #ff0033; /* Neon hatás */
+    font-family: 'Montserrat', sans-serif;
+}
+
+#countdown span { color: #ff0033; }
+
+#launch-message {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #ff0033;
+    animation: pulse 1.5s infinite;
+}
+
+/* --- TOKENOMICS --- */
+.section { padding: 80px 20px; }
+h2 { color: var(--primary); font-weight: 800; font-size: 1.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--dark-card);
+    border: 1px solid #222;
+    border-radius: 15px;
+    width: 200px;
+    padding: 30px 20px;
+}
+
+.card h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0;
+    color: var(--primary);
+}
+.card p { margin: 5px 0 0 0; color: #888; text-transform: uppercase; font-size: 0.9rem; }
+
+/* --- ENERGY (KÉPEK) --- */
+.gallery { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.gallery-item {
+    width: 300px;
+    height: 180px;
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+
+/* --- COMMUNITY --- */
+.community-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.comm-btn {
+    background: var(--dark-card);
+    border: 1px solid #333;
+    padding: 20px;
+    width: 200px;
+    border-radius: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comm-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+/* --- MOBIL NÉZET JAVÍTÁS (VÉGLEGES, ÖSSZEVONT VERZIÓ) --- */
+@media (max-width: 768px) {
+    
+    /* Menü */
+    nav { flex-direction: column; gap: 15px; padding: 10px 20px; }
+    .nav-links { justify-content: center; gap: 15px; width: 100%; font-size: 0.8rem; }
+    .logo { margin-bottom: 5px; }
+
+    /* Hero */
+    .hero { padding-top: 20px; }
+    .main-logo { width: 120px; margin-bottom: 10px; }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+        margin: 10px 0 20px 0;
+        word-break: break-word;
+    }
+
+    .hero p { font-size: 1rem; padding: 0 15px; }
+
+    /* Gombok és Visszaszámláló mobilon */
+    .hero-buttons {
+        flex-direction: column; /* Egymás alá */
+        width: 100%;
+    }
+    
+    /* Ez biztosítja, hogy mobilon is szép helye legyen a visszaszámlálónak */
+    #countdown-container {
+        margin: 15px 0; 
+        order: -1; /* Ezzel a trükkel a gombok FÖLÉ tesszük mobilon, hogy jobban látszódjon (opcionális, ha zavar, töröld ki ezt a sort) */
+    }
+    
+    #countdown { font-size: 2rem; }
+
+    .btn-filled, .btn-outline { width: 80%; }
+}
+
+/* Animáció a visszaszámlálóhoz */
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
 .glow { filter: drop-shadow(0 0 15px rgba(255, 0, 51, 0.5)); }
 
 h1 {
